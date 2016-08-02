@@ -161,3 +161,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+# for SQu1D
+export LD_LIBRARY_PATH="/opt/intel/mkl/lib/intel64":;
