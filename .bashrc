@@ -164,4 +164,13 @@ fi
 
 
 # for SQu1D
-export LD_LIBRARY_PATH="/opt/intel/mkl/lib/intel64":;
+SQU1D_HOME="$HOME/squ1d/"
+if [ -d "$SQU1D_HOME" ]; then
+   export LD_LIBRARY_PATH="/opt/intel/mkl/lib/intel64":;
+fi
+
+# for oclint
+OCLINT_HOME="$HOME/codetools/oclint-0.10.3/"
+if [ -d "$OCLINT_HOME" ]; then
+   export PATH=${OCLINT_HOME}bin:$PATH
+fi
