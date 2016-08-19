@@ -109,6 +109,7 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
   set background=dark
   let g:solarized_termcolors=256
+  let g:solarized_italic=0
   colorscheme solarized
 endif
 
