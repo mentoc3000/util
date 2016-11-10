@@ -97,7 +97,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_javascript_jslint_quiet_messages = {
-        \ "regex":   "unused" }
+"        \ "regex":   "unused" }
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+let g:syntastic_cpp_include_dirs = ['/opt/intel/mkl/include/','/opt/intel/mkl/lib/intel64/','/usr/include/mpich/']
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -111,6 +114,7 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
   set background=dark
   let g:solarized_termcolors=256
+  let g:solarized_italic=0
   colorscheme solarized
 endif
 
