@@ -68,10 +68,6 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" Syntax for odd extensions
-au BufNewFile,BufRead *.handlebars set filetype=html
-au BufNewFile,BufRead *.hbs set filetype=html
-
 " Start Pathogen
 execute pathogen#infect()
 
