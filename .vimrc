@@ -109,14 +109,14 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-if $COLORTERM == 'gnome-terminal'
+"if $COLORTERM == 'gnome-terminal'
   syntax enable
   set t_Co=256
   set background=dark
   let g:solarized_termcolors=256
   let g:solarized_italic=0
   colorscheme solarized
-endif
+"endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
