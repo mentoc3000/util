@@ -1,4 +1,3 @@
-" test
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -23,16 +22,17 @@ set showmatch
 set smartcase
 set autowrite
 set incsearch		" do incremental searching
-set nu			" displaly number lines
-set ls=2		" always show the status bar
+set nu			" display number lines
+"set ls=2		" always show the status bar
 set noeb
 set ai
 set lbr
 set hlsearch
-set ch=1          " command line number of lines
+"set ch=1          " command line number of lines
 set hidden
 set so=5
 set wildmenu      " Auto complete filenames when hitting tab
+
 
 " Replace tabs with spaces
 set shiftwidth=3
@@ -110,13 +110,41 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 "if $COLORTERM == 'gnome-terminal'
+
   syntax enable
   set t_Co=256
-  set background=dark
   let g:solarized_termcolors=256
   let g:solarized_italic=0
+  set background=dark
   colorscheme solarized
+
 "endif
+
+"set nocompatible
+"set runtimepath+=~/.vim/bundle/vim-colors-solarized
+"set t_Co=256
+"let g:solarized_termcolors=256
+"set background=dark
+"set laststatus=2
+"set runtimepath+=~/.vim/bundle/lightline.vim
+"let g:lightline = { 'colorscheme': 'solarized' }
+"filetype plugin indent on
+"syntax enable
+"colorscheme solarized
+
+"" Airline
+"let g:airline_powerline_fonts = 1
+"if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+"
+"endif
+"let g:airline_symbols.space = "\ua0"
+"let g:bufferline_echo = 0
+"set noshowmode
+
+
+
+
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
