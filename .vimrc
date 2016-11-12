@@ -183,6 +183,8 @@ let g:lightline = {
 "syntax enable
 "colorscheme solarized
 
+set t_Co=256
+let g:solarized_termcolors=256
 
 "" Airline
 "let g:airline_powerline_fonts = 1
