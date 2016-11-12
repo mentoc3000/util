@@ -23,12 +23,12 @@ set smartcase
 set autowrite
 set incsearch		" do incremental searching
 set nu			" display number lines
-"set ls=2		" always show the status bar
+set ls=2		" always show the status bar
 set noeb
 set ai
 set lbr
 set hlsearch
-"set ch=1          " command line number of lines
+set ch=1          " command line number of lines
 set hidden
 set so=5
 set wildmenu      " Auto complete filenames when hitting tab
@@ -76,7 +76,8 @@ au BufNewFile,BufRead *.hbs set filetype=html
 execute pathogen#infect()
 
 " code folding
-set foldmethod=syntax
+"set foldmethod=syntax "caution: makes file loading slow
+set foldmethod=indent
 set nofoldenable
 set foldlevel=0
 inoremap <F9> <C-O>za
@@ -87,13 +88,13 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
 " Syntastic options
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0 "Slows file opening
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_javascript_jslint_quiet_messages = {
@@ -101,6 +102,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_cpp_include_dirs = ['/opt/intel/mkl/include/','/opt/intel/mkl/lib/intel64/','/usr/include/mpich/']
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -117,6 +122,7 @@ endif
   let g:solarized_italic=0
   set background=dark
   colorscheme solarized
+  set noshowmode
 
 "endif
 
@@ -125,7 +131,6 @@ endif
 "set t_Co=256
 "let g:solarized_termcolors=256
 "set background=dark
-"set laststatus=2
 "set runtimepath+=~/.vim/bundle/lightline.vim
 "let g:lightline = { 'colorscheme': 'solarized' }
 "filetype plugin indent on
