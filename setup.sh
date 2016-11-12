@@ -77,7 +77,7 @@ else
 fi
 
 # Download vim-javascript-syntax
-if [-a ~/.vim/bundle/vim-javascript-syntax/syntax/javascript.vim ]
+if [ -a ~/.vim/bundle/vim-javascript-syntax/syntax/javascript.vim ]
 then
    echo "vim-javascript-syntax is already installed (https://github.com/jelera/vim-javascript-syntax)"
 else
@@ -94,54 +94,54 @@ else
    echo "vim-javascript installed (https://github.com/pangloss/vim-javascript)"
 fi
 
-## Download vim-signature
-#if [ -a ~/.vim/bundle/vim-signature/plugin/signature.vim ]
-#then
-#   echo "vim-signature is already installed (https://github.com/kshenoy/vim-signature)"
-#else
-#   git clone https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature
-#   echo "vim-signature installed (https://github.com/kshenoy/vim-signature)"
-#fi
-#
-## Download Surround
-#if [ -a ~/.vim/bundle/vim-surround/plugin/surround.vim ]
-#then
-#   echo "vim-surround is already installed (https://github.com/tpope/vim-surround)"
-#else
-#   cd ~/.vim/bundle
-#   git clone git://github.com/tpope/vim-surround.git
-#   echo "vi-surround installed (https://github.com/tpope/vim-surround)"
-#fi
-#
-## Download Supertab
-#if [ -a ~/.vim/bundle/supertab/plugin/supertab.vim ]
-#then
-#   echo "Supertab is already installed (https://github.com/ervandew/supertab)"
-#else
-#   cd ~/.vim/bundle
-#   git clone https://github.com/ervandew/supertab.git
-#   echo "Supertab installed (https://github.com/ervandew/supertab)"
-#fi
-#
-## Download NERDtree
-#if [ -a ~/.vim/bundle/nerdtree/autoload/nerdtree.vim ]
-#then
-#   echo "NERDtree is already installed (https://github.com/scrooloose/nerdtree)"
-#else 
-#   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-#   echo "NERDtree installed (https://github.com/scrooloose/nerdtree)"
-#fi
-#
-## Download NERDcommenter
-#if [ -a ~/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim ]
-#then
-#   echo "NERDcommenter is already installed (https://github.com/scrooloose/nerdcommenter)"
-#else
-#   cd ~/.vim/bundle
-#   git clone https://github.com/scrooloose/nerdcommenter.git
-#   echo "NERDcommenter installed (https://github.com/scrooloose/nerdcommenter)"
-#fi
-#
+# Download vim-signature
+if [ -a ~/.vim/bundle/vim-signature/plugin/signature.vim ]
+then
+   echo "vim-signature is already installed (https://github.com/kshenoy/vim-signature)"
+else
+   git clone https://github.com/kshenoy/vim-signature.git ~/.vim/bundle/vim-signature
+   echo "vim-signature installed (https://github.com/kshenoy/vim-signature)"
+fi
+
+# Download Surround
+if [ -a ~/.vim/bundle/vim-surround/plugin/surround.vim ]
+then
+   echo "vim-surround is already installed (https://github.com/tpope/vim-surround)"
+else
+   cd ~/.vim/bundle
+   git clone git://github.com/tpope/vim-surround.git
+   echo "vi-surround installed (https://github.com/tpope/vim-surround)"
+fi
+
+# Download Supertab
+if [ -a ~/.vim/bundle/supertab/plugin/supertab.vim ]
+then
+   echo "Supertab is already installed (https://github.com/ervandew/supertab)"
+else
+   cd ~/.vim/bundle
+   git clone https://github.com/ervandew/supertab.git
+   echo "Supertab installed (https://github.com/ervandew/supertab)"
+fi
+
+# Download NERDtree
+if [ -a ~/.vim/bundle/nerdtree/autoload/nerdtree.vim ]
+then
+   echo "NERDtree is already installed (https://github.com/scrooloose/nerdtree)"
+else 
+   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+   echo "NERDtree installed (https://github.com/scrooloose/nerdtree)"
+fi
+
+# Download NERDcommenter
+if [ -a ~/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim ]
+then
+   echo "NERDcommenter is already installed (https://github.com/scrooloose/nerdcommenter)"
+else
+   cd ~/.vim/bundle
+   git clone https://github.com/scrooloose/nerdcommenter.git
+   echo "NERDcommenter installed (https://github.com/scrooloose/nerdcommenter)"
+fi
+
 ## Download Powerline
 #if [ -a ~/.vim/bundle/powerline/setup.py ]
 #then
