@@ -150,16 +150,34 @@ endif
 
 "endif
 
+"" Lightline
 "set nocompatible
 "set runtimepath+=~/.vim/bundle/vim-colors-solarized
 "set t_Co=256
 "let g:solarized_termcolors=256
 "set background=dark
 "set runtimepath+=~/.vim/bundle/lightline.vim
-"let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 "filetype plugin indent on
 "syntax enable
 "colorscheme solarized
+
 
 "" Airline
 "let g:airline_powerline_fonts = 1
@@ -172,7 +190,7 @@ endif
 "set noshowmode
 
 
-
+" Fugitive
 
 
 " Only do this part when compiled with support for autocommands.

@@ -205,3 +205,14 @@ else
    git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
    echo "Lightline installed (https://github.com/itchyny/lightline.vim)"
 fi
+
+# Download Fugitive
+if [ -a ~/.vim/bundle/vim-fugitive/plugin/fugitive.vim ]
+then
+   echo "Fugitive is already installed (https://github.com/tpope/vim-fugitive)"
+else
+   cd ~/.vim/bundle
+   git clone git://github.com/tpope/vim-fugitive.git
+   vim -u NONE -c "helptags vim-fugitive/doc" -c q
+   echo "Fugitive installed (https://github.com/tpope/vim-fugitive)"
+fi
