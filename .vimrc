@@ -72,6 +72,11 @@ set splitright
 au BufNewFile,BufRead *.handlebars set filetype=html
 au BufNewFile,BufRead *.hbs set filetype=html
 
+" html indenting
+let g:html_indent_script1="inc"
+let g:html_indent_style1="inc"
+let g:html_indent_autotags="html"
+
 " Start Pathogen
 execute pathogen#infect()
 
@@ -188,9 +193,6 @@ let g:lightline = {
 "let g:airline_symbols.space = "\ua0"
 "let g:bufferline_echo = 0
 "set noshowmode
-
-
-" Fugitive
 
 
 " Only do this part when compiled with support for autocommands.
