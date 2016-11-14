@@ -11,36 +11,36 @@ utildir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # iterate over files
 for file in "${files[@]}"
 do
-	linkpath="$HOME/$file"
-	filepath="$utildir/$file"
-	# if the link file exists already
-	if [ -a $linkpath ]
-	then
-		# if the link file is a symbolic link
-		if [ -L $linkpath ]
-		then
-			if ln -sfn $filepath $linkpath
-			then
-				echo "$file link has been updated to $filepath"
-			fi
-		# if the link file is a normal file
-		elif [ -f $linkpath ]
-		then
-			numVersions=$(ls -alF ~ | grep $file | wc -l)
-			file_old="${linkpath}_old${numVersions}"
-			mv $linkpath $file_old
-			if ln -s $filepath $linkpath
-			then
-				echo "$file has been renamed to $file_old and link created to $filepath"
-			fi
-		fi
-	# if there is no file or link is broken
-	else
-		if ln -sfn $filepath $linkpath
-		then
-			echo "$file link has been created to $filepath"
-		fi
-	fi
+   linkpath="$HOME/$file"
+   filepath="$utildir/$file"
+   # if the link file exists already
+   if [ -a $linkpath ]
+   then
+      # if the link file is a symbolic link
+      if [ -L $linkpath ]
+      then
+         if ln -sfn $filepath $linkpath
+         then
+            echo "$file link has been updated to $filepath"
+         fi
+         # if the link file is a normal file
+      elif [ -f $linkpath ]
+      then
+         numVersions=$(ls -alF ~ | grep $file | wc -l)
+         file_old="${linkpath}_old${numVersions}"
+         mv $linkpath $file_old
+         if ln -s $filepath $linkpath
+         then
+            echo "$file has been renamed to $file_old and link created to $filepath"
+         fi
+      fi
+      # if there is no file or link is broken
+   else
+      if ln -sfn $filepath $linkpath
+      then
+         echo "$file link has been created to $filepath"
+      fi
+   fi
 done
 
 echo "---Downloading vim packages---"
@@ -127,7 +127,7 @@ fi
 if [ -a ~/.vim/bundle/nerdtree/autoload/nerdtree.vim ]
 then
    echo "NERDtree is already installed (https://github.com/scrooloose/nerdtree)"
-else 
+else
    git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
    echo "NERDtree installed (https://github.com/scrooloose/nerdtree)"
 fi
@@ -171,10 +171,10 @@ fi
 # Download vim-airline
 if [ -a ~/.vim/bundle/vim-airline/plugin/airline.vim ]
 then
-  echo "Airline is already installed (https://github.com/vim-airline/vim-airline)"
+   echo "Airline is already installed (https://github.com/vim-airline/vim-airline)"
 else
-  git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-  echo "Airline installed (https://github.com/vim-airline/vim-airline)"
+   git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+   echo "Airline installed (https://github.com/vim-airline/vim-airline)"
 fi
 #
 ## Download powerline fonts
@@ -190,10 +190,10 @@ fi
 # Download airline themes
 if [ -a ~/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim ]
 then
-  echo "Airline Themes is already installed (https://github.com/vim-airline/vim-airline-themes)"
+   echo "Airline Themes is already installed (https://github.com/vim-airline/vim-airline-themes)"
 else
-  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-  echo "Airline Themes installed (https://github.com/vim-airline/vim-airline-themes)"
+   git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+   echo "Airline Themes installed (https://github.com/vim-airline/vim-airline-themes)"
 fi
 
 
