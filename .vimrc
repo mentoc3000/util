@@ -90,7 +90,7 @@ nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
 autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+autocmd BufWinEnter *.* silent loadview
 
 " Syntastic options
 set statusline+=%#warningmsg#
@@ -162,35 +162,46 @@ endif
 "let g:solarized_termcolors=256
 "set background=dark
 "set runtimepath+=~/.vim/bundle/lightline.vim
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
+"let g:lightline = {
+"      \ 'colorscheme': 'wombat',
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ],
+"      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+"      \ },
+"      \ 'component': {
+"      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+"      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+"      \ },
+"      \ 'component_visible_condition': {
+"      \   'readonly': '(&filetype!="help"&& &readonly)',
+"      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+"      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+"      \ }
+"      \ }
 "filetype plugin indent on
 "syntax enable
 "colorscheme solarized
+"set t_Co=256
+"let g:solarized_termcolors=256
 
-set t_Co=256
-let g:solarized_termcolors=256
+" Airline
+let g:airline#extensions#tabline#enabled=1
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '◀'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.readonly = ''
+let g:airline_skip_empty_sections = 1
 
-"" Airline
-"let g:airline_powerline_fonts = 1
-"if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-"
+
+
 "endif
 "let g:airline_symbols.space = "\ua0"
 "let g:bufferline_echo = 0
@@ -236,5 +247,5 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+           \ | wincmd p | diffthis
 endif

@@ -168,14 +168,14 @@ fi
 #fi
 #
 #
-## Download vim-airline
-#if [ -a ~/.vim/bundle/vim-airline/plugin/airline.vim ]
-#then
-#   echo "Airline is already installed (https://github.com/vim-airline/vim-airline)"
-#else
-#   git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-#   echo "Airline installed (https://github.com/vim-airline/vim-airline)"
-#fi
+# Download vim-airline
+if [ -a ~/.vim/bundle/vim-airline/plugin/airline.vim ]
+then
+  echo "Airline is already installed (https://github.com/vim-airline/vim-airline)"
+else
+  git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  echo "Airline installed (https://github.com/vim-airline/vim-airline)"
+fi
 #
 ## Download powerline fonts
 #if [ -a ~/.vim/bundle/powerline-fonts/install.sh ]
@@ -187,24 +187,24 @@ fi
 #   echo "Powerline Fonts installed (https://github.com/powerline/fonts)"
 #fi
 #
-## Download airline themes
-#if [ -a ~/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim ]
-#then
-#   echo "Airline Themes is already installed (https://github.com/vim-airline/vim-airline-themes)"
-#else
-#   git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-#   echo "Airline Themes installed (https://github.com/vim-airline/vim-airline-themes)"
-#fi
-
-
-# Download Lightline
-if [ -a ~/.vim/bundle/lightline.vim/plugin/lightline.vim ]
+# Download airline themes
+if [ -a ~/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim ]
 then
-   echo "Lightline is already installed (https://github.com/itchyny/lightline.vim)"
+  echo "Airline Themes is already installed (https://github.com/vim-airline/vim-airline-themes)"
 else
-   git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
-   echo "Lightline installed (https://github.com/itchyny/lightline.vim)"
+  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+  echo "Airline Themes installed (https://github.com/vim-airline/vim-airline-themes)"
 fi
+
+
+# # Download Lightline
+# if [ -a ~/.vim/bundle/lightline.vim/plugin/lightline.vim ]
+# then
+#    echo "Lightline is already installed (https://github.com/itchyny/lightline.vim)"
+# else
+#    git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
+#    echo "Lightline installed (https://github.com/itchyny/lightline.vim)"
+# fi
 
 # Download Fugitive
 if [ -a ~/.vim/bundle/vim-fugitive/plugin/fugitive.vim ]
